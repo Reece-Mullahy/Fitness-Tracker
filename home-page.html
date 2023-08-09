@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fitness Journal</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=REM&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/home-page.css">
+
+  </head>
+  <body style="font-family: 'REM', sans-serif;
+  background-color: #ffccbc; color: white;">
+
+    <div class="header">Fitness Journal</div>
+
+    <div class="different-tabs">
+      <div class="option1"><a class="link-style" href="home-page.html">Current Week</a></div>
+      <div class="option2"><a class="link-style" href="weekly-goals.html">Set Weekly Goals</a></div>
+    </div>
+
+    <div class="days-grid js-days-grid">
+    </div>
+
+    <script src="data/days-of-week.js"></script>
+    <script src="home-page-js/home-page-html.js"></script>
+    <!--
+      <script src="display-scripts/display-muscles.js"></script>
+    <script src="display-scripts/display-protein.js"></script>
+    <script src="display-scripts/display-times.js"></script>
+    <script src="display-scripts/display-cardio.js"></script>
+    -->
+    <script src="data/display-days.js"></script>
+    <script type="module" src="display-scripts/display-all-fields.js"></script>
+    <script src="home-page-js/save-button.js"></script>
+  </body>
+</html>
