@@ -6,23 +6,20 @@ days.forEach((day) => {
   <div class="day">
     <div class="day-of-week">${day.day}</div>
     <div class="row-flex">
-      <div class="category">Total Time:</div>
+      <div class="category">Total Time (min)</div>
       <input type="number" class="user-input js-user-input${i}">
-      <div class="units">min</div>
     </div>
     <div class="row-flex">
-      <div class="category">Protein:</div>
+      <div class="category">Protein (g)</div>
       <input type="number" class="user-input js-user-protein${i}">
-      <div class="units">g</div>
     </div>
     <div class="row-flex">
       <div class="category">Muscles Worked:</div>
       <input type="text" class="user-input-muscles js-user-muscles${i}">
     </div>
     <div class="row-flex">
-      <div class="category">Cardio:</div>
+      <div class="category">Cardio (min)</div>
       <input type="number" class="user-input js-user-cardio${i}">
-      <div class="units">min</div>
     </div>
     <div class="row-flex-notes">
       <div class="category">Notes:</div>

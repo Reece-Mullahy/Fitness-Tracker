@@ -51,8 +51,8 @@ function displayProgress() {
   for (let i = 0; i < allGoals.length; i++) {
     let avgProgress = document.querySelector(`.js-progress-measurement${i}`);
     let avgGoal = allGoals[i].goal;
-    let avgCurr = currTotals[i] / today;
-    let diff = avgCurr - avgGoal;
+    let avgCurr = Math.round((currTotals[i] / today)* 10) / 10;
+    let diff = Math.round((avgCurr - avgGoal) * 10) / 10;
     diff > 0 ? avgProgress.innerHTML = `+${diff}` : avgProgress.innerHTML = diff;
 
     let totalProgress = document.querySelector(`.js-total-measurement${i}`);
@@ -79,7 +79,7 @@ function setTotals() {
   }
   for (let i = 0; i < allGoals.length; i++) {
     document.querySelector(`.js-total-number${i}`).innerHTML = currTotals[i];
-    document.querySelector(`.js-curr-number${i}`).innerHTML = currTotals[i] / today;
+    document.querySelector(`.js-curr-number${i}`).innerHTML = Math.round((currTotals[i] / today) * 10) / 10;
   }
 };
 

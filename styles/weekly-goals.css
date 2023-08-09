@@ -13,8 +13,13 @@
   justify-items: center;
   align-items: center;
   align-content: space-evenly;
-  row-gap: 50px;
   margin-bottom: 120px;
+}
+
+@media (max-width: 750px) {
+  .goals-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .goal {
@@ -79,6 +84,13 @@
   justify-items: center;
   align-items: center;
   align-content: space-evenly;
+  row-gap: 50px;
+}
+
+@media (max-width: 900px) {
+  .progress-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .progress-display,
