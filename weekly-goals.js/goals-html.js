@@ -20,9 +20,9 @@ allCategories.forEach((category) => {
 document.querySelector(`.js-goals-grid`)
   .innerHTML = goalDisplay;
 
-let allHeaders = ["Total Time(min)", "Protein(g)", "Cardio(min)"];
-let progressDisplay = "<div class=progress-type>Avg</div>";
-let totalDisplay = "<div class=progress-type>Weekly Total</div>";
+let allHeaders = ["Total Time (min)", "Protein (g)", "Cardio (min)"];
+let progressDisplay = "<div class=progress-type>Daily Averages</div>";
+let totalDisplay = "<div class=progress-type>Weekly Totals</div>";
 let j = 0;
 
 allHeaders.forEach((header) => {

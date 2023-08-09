@@ -4,7 +4,8 @@
   justify-content: center;
   margin-top: 30px;
   font-size: 30px;
-  color: #00887a;
+  color: #0d2c4e;
+  text-decoration: underline;
 }
 
 .days-grid {
@@ -161,7 +162,7 @@ input::-webkit-inner-spin-button {
 }
 
 .link-style {
-  color: white;
+  color: #0d2c4e;
   text-decoration: none;
 }
 

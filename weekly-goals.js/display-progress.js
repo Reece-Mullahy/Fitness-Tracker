@@ -30,6 +30,7 @@ for (let i = 0; i < allGoals.length; i++) {
     console.log(i);
     sortGoals();
     pushGoals(i);
+    displayProgress();
     localStorage.setItem('allGoals', JSON.stringify(allGoals));
   });
 };
