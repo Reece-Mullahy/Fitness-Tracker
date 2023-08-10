@@ -21,8 +21,32 @@ document.querySelector(`.js-goals-grid`)
   .innerHTML = goalDisplay;
 
 let allHeaders = ["Total Time (min)", "Protein (g)", "Cardio (min)"];
-let progressDisplay = "<div class=progress-type>Daily Averages</div>";
-let totalDisplay = "<div class=progress-type>Weekly Totals</div>";
+let progressDisplay = `
+<div class=progress-type>Daily Averages</div>
+ <div class="progress-flex-headers">
+  <div class="current-header">
+    <div>Current</div>
+  </div>
+  <div class="goal-header">
+    <div>Goal</div>
+  </div>
+  <div class="progress-to-goal-header"
+    <div>Difference</div>
+  </div>
+ `;
+let totalDisplay = `
+<div class=progress-type>Weekly Totals</div>
+ <div class="progress-flex-headers">
+  <div class="current-header">
+    <div>Current</div>
+  </div>
+  <div class="goal-header">
+    <div>Goal</div>
+  </div>
+  <div class="progress-to-goal-header percentage"
+    <div>% Goal</div>
+  </div>
+`;
 let j = 0;
 
 allHeaders.forEach((header) => {
