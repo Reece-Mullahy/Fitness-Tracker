@@ -90,13 +90,14 @@
 @media (max-width: 900px) {
   .progress-grid {
     grid-template-columns: 1fr;
+    margin-bottom: 50px;
   }
 }
 
 .progress-display,
 .totals-display {
   width: 450px;
-  height: 320px;
+  height: 400px;
 }
 
 .progress-type {

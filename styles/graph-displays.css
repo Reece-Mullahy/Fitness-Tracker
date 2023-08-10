@@ -5,8 +5,14 @@
   justify-items: center;
   align-items: center;
   align-content: space-evenly;
-  margin-top: 100px;
   height: 400px;
   column-gap: 50px;
   min-width: 0;
+}
+
+@media (max-width: 900px) {
+  .graphs {
+    margin-top: 100px;
+    grid-template-columns: 1fr;
+  }
 }
