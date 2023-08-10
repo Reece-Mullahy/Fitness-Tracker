@@ -90,7 +90,16 @@ function displayCharts() {
       }]
     },
     options: {
-      responsive: false
+      responsive: false,
+      scales: {
+        yAxes: [{
+          display: true,
+          ticks: {
+            min: 0,
+            max: 100
+          }
+        }]
+      }
     }
   });
 };
