@@ -1,0 +1,12 @@
+.graphs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-evenly;
+  justify-items: center;
+  align-items: center;
+  align-content: space-evenly;
+  margin-top: 100px;
+  height: 400px;
+  column-gap: 50px;
+  min-width: 0;
+}

@@ -31,6 +31,7 @@ for (let i = 0; i < allGoals.length; i++) {
     sortGoals();
     pushGoals(i);
     displayProgress();
+    displayCharts();
     localStorage.setItem('allGoals', JSON.stringify(allGoals));
   });
 };
@@ -45,7 +46,54 @@ let today = date.getDay();
 sortGoals();
 getTotals();
 setTotals();
+
+let differences = [];
+let percentages = [];
 displayProgress();
+displayCharts();
+
+/*
+--------------------------------------------------------------------------------------------------
+*/
+
+function displayCharts() {
+  Chart.defaults.global.defaultFontFamily = "REM"
+  let diffGraph = document.querySelector(`.js-difference-graph`).getContext("2d");
+  new Chart(diffGraph, {
+    type: 'bar',
+    data: {
+      labels: ['Total Time', 'Protein', 'Cardio'],
+      datasets: [{
+        label: 'Difference to Avg Goal',
+        data: [
+          differences[0], differences[1], differences[2]
+        ],
+        backgroundColor:  '#0d2c4e'
+      }]
+    },
+    options: {
+      responsive: false
+    }
+  });
+
+  let percentageGraph = document.querySelector(`.js-percent-graph`).getContext("2d");
+  new Chart(percentageGraph, {
+    type: 'bar',
+    data: {
+      labels: ['Total Time', 'Protein', 'Cardio'],
+      datasets: [{
+        label: '% to Goal',
+        data: [
+          percentages[0], percentages[1], percentages[2]
+        ],
+        backgroundColor: '#0d2c4e'
+      }]
+    },
+    options: {
+      responsive: false
+    }
+  });
+};
 
 function displayProgress() {
   for (let i = 0; i < allGoals.length; i++) {
@@ -53,11 +101,13 @@ function displayProgress() {
     let avgGoal = allGoals[i].goal;
     let avgCurr = Math.round((currTotals[i] / today)* 10) / 10;
     let diff = Math.round((avgCurr - avgGoal) * 10) / 10;
+    differences[i] = diff;
     diff > 0 ? avgProgress.innerHTML = `+${diff}` : avgProgress.innerHTML = diff;
 
     let totalProgress = document.querySelector(`.js-total-measurement${i}`);
     let totalGoal = allGoals[i].goal * 7;
     let totalCurr = currTotals[i];
+    percentages[i] = Math.round((totalCurr / totalGoal) * 100);
     totalProgress.innerHTML = `${Math.round((totalCurr / totalGoal) * 100)}%`;
   }
 };

@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="styles/home-page.css">
     <link rel="stylesheet" href="styles/weekly-goals.css">
+    <link rel="stylesheet" href="styles/graph-displays.css">
 
   </head>
   <body style="font-family: 'REM', sans-serif;
@@ -33,6 +34,12 @@
       </div>
     </div>
 
+    <div class="graphs">
+      <canvas class="js-difference-graph" width="450px" height="350px"></canvas>
+      <canvas class="js-percent-graph" width="450px" height="350px"></canvas>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script src="weekly-goals.js/goals-html.js"></script>
     <script type="module" src="weekly-goals.js/display-progress.js"></script>
     <script src="weekly-goals.js/save-goals-button.js"></script>
