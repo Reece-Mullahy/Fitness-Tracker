@@ -1,3 +1,4 @@
+// add feature when user clicks on a save button, the button reverses colors and displays "Saved!" for 1.5 seconds before returning to original display
 for (let i = 0; i <= 2; i++) {
   let goalButton = document.querySelector(`.js-save-goal${i}`);
   goalButton.addEventListener("click", () => {
@@ -8,6 +9,7 @@ for (let i = 0; i <= 2; i++) {
 });
 };
 
+// set innerHTML and CSS properties back to orginal displays
 function reverseBack(goalButton) {
   goalButton.innerHTML = "Save";
   goalButton.classList.remove('goal-saved');

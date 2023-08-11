@@ -5,6 +5,7 @@ let allUnits = ["Min", "G", "Min"];
 let goalDisplay = "";
 let i = 0;
 
+// set the innerHTML where user can input goals for each category
 allCategories.forEach((category) => {
   goalDisplay += `
     <div class="goal">
@@ -17,10 +18,11 @@ allCategories.forEach((category) => {
   i++;
 });
 
+
 document.querySelector(`.js-goals-grid`)
   .innerHTML = goalDisplay;
 
-let allHeaders = ["Total Time (min)", "Protein (g)", "Cardio (min)"];
+// generate the html for headers where daily average and weekly total progress will be displayed
 let progressDisplay = `
 <div class=progress-type>Daily Averages</div>
  <div class="progress-flex-headers">
@@ -47,8 +49,10 @@ let totalDisplay = `
     <div>% Goal</div>
   </div>
 `;
-let j = 0;
 
+let j = 0;
+// generate the html for each category that will show how well user is performing on the goal they set
+let allHeaders = ["Total Time (min)", "Protein (g)", "Cardio (min)"];
 allHeaders.forEach((header) => {
   progressDisplay += `
   <div class="progress-flex">

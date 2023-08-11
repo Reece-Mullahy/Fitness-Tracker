@@ -187,7 +187,3 @@ input::-webkit-inner-spin-button {
 .link-style:hover {
   text-decoration: underline;
 }
-
-.link-style:active {
-  color: #00887a;
-}

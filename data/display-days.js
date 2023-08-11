@@ -1,3 +1,4 @@
+// list of objects to contain user input
 let allDays = [
   {
     day: 0,

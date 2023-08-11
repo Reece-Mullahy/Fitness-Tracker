@@ -1,6 +1,9 @@
 let gridDisplay = "";
 let i = 0;
 
+// generate html for tracker on the home page
+// generate html for each day so all days of the week are displayed
+// use variable i and increment each time through so each day has a specific index
 days.forEach((day) => {
   gridDisplay += `
   <div class="day">

@@ -1,5 +1,7 @@
+// get user input data from tracker using JSON and local storage so these values can be used
 let allFields = JSON.parse(localStorage.getItem('allDays')) || allDays;
 
+// use local storage to retrieve target goals for the week
 let allGoals = JSON.parse(localStorage.getItem('allGoals')) || [
   {
     type: "time",
@@ -23,6 +25,7 @@ let allGoals = JSON.parse(localStorage.getItem('allGoals')) || [
 
 keepGoals();
 
+// for each save button, the page will save the goal entered in allGoals and update the progress and graphs from the values saved
 for (let i = 0; i < allGoals.length; i++) {
   let saveGoal = document.querySelector(`.js-save-goal${i}`);
 
@@ -36,6 +39,7 @@ for (let i = 0; i < allGoals.length; i++) {
   });
 };
 
+// initialize variables that will be used in finding the daily averages and weekly totals
 let timeSum = 0;
 let proteinSum = 0;
 let cardioSum = 0;
@@ -43,10 +47,14 @@ let currTotals = [];
 const date = new Date();
 let today = date.getDay();
 
+// call getTotals() to put total values for the week in currTotals list
+// call setTotals() to display current values for daily average and weekly total
 sortGoals();
 getTotals();
 setTotals();
 
+// use displayProgress() to display difference from goal and % to goal and put values in lists below
+// call displaysCharts() to create graphs that display values obtained from previous function
 let differences = [];
 let percentages = [];
 displayProgress();
@@ -56,8 +64,10 @@ displayCharts();
 --------------------------------------------------------------------------------------------------
 */
 
+// create 2 graphs -> one that displays difference from the daily average goal and one for % progress on goal
 function displayCharts() {
   Chart.defaults.global.defaultFontFamily = "REM"
+  Chart.defaults.global.defaultFontSize = 15;
   let diffGraph = document.querySelector(`.js-difference-graph`).getContext("2d");
   new Chart(diffGraph, {
     type: 'bar',
@@ -104,6 +114,8 @@ function displayCharts() {
   });
 };
 
+// set the innerHTML of daily average difference from difference between user average and goal
+// set innerHTML for weekly total progress based on how much progress has been made as a %
 function displayProgress() {
   for (let i = 0; i < allGoals.length; i++) {
     let avgProgress = document.querySelector(`.js-progress-measurement${i}`);
@@ -121,6 +133,7 @@ function displayProgress() {
   }
 };
 
+// use values each day in tracker to find the total for total time, protein, and cardio and put these values in list
 function getTotals() {
   for (let i = 0; i < allFields.length; i++) {
     timeSum += allFields[i].totalTime;
@@ -132,6 +145,7 @@ function getTotals() {
   currTotals[2] = cardioSum;
 };
 
+// set innerHTML to the value user has totaled in the week so far and use current day of the week to find daily average
 function setTotals() {
   if (today == 0) {
     today = 7;
@@ -142,6 +156,7 @@ function setTotals() {
   }
 };
 
+// put each goal entered into list where each index represents a different goal
 function pushGoals(i) {
     let weeklyGoal = +document.querySelector(`.js-set-goal${i}`).value;
     allGoals[i].goal = weeklyGoal;
@@ -150,6 +165,7 @@ function pushGoals(i) {
     document.querySelector(`.js-total-goal${i}`).innerHTML = weeklyGoal * 7;
 };
 
+// use this function after retreiving list of goals from local storage to maintain innerHTML based on goals entered
 function keepGoals() {
   sortGoals();
   for (let i = 0; i < allGoals.length; i++) {
