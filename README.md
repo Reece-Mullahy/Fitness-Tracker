@@ -11,7 +11,7 @@ is on the goal set. The graph that demonstrates progress on weekly totals shows 
 percent.
 
 
-### Ex
+## Example
 
 Tracker through Saturday:
 <img width="1424" alt="Screen Shot 2023-08-12 at 3 25 49 PM" src="https://github.com/Reece-Mullahy/Fitness-Tracker/assets/137824446/d93e827d-748f-4cdf-8d3f-683a8560272e">
